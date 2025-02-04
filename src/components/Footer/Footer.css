@@ -1,0 +1,108 @@
+.Footer{
+    background: var(--tertiary-color);
+}
+
+:root {
+    --background-color: #ffffff;
+    --Primary-color: 000000;
+    --tertiary-color: #F2F0F1;
+   }
+
+.Footer .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    height: 500px;
+    background: var(--tertiary-color);
+}
+
+.socials{
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.column-right{
+    width: 350px;
+    margin-top: 25px;
+    font-family: poppins;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.column h4{
+    width: 350px;
+    margin-top: 25px;
+    font-family: poppins;
+    font-weight: normal;
+    font-size: 14px;
+    
+}
+
+.column h3{
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 18px;
+    
+}
+
+.column p{
+    padding: 5px 0px;
+    margin-top: 10px;
+}
+
+
+/* Mobile view (max-width: 480px) */
+@media (max-width: 792px) {
+    .Footer .container {
+        flex-direction: column; /* Stack items vertically */
+        gap: 30px; /* Spacing between items */
+        height: auto; /* Let the height adjust based on content */
+        padding: 20px; /* Add padding */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .socials {
+        gap: 10px;
+        justify-content: flex-start; /* Align social icons to the left */
+    }
+
+
+
+    .column h4,
+    .column h3,
+    .column p {
+        text-align: left; /* Ensure text is aligned to the left */
+        width: 100%; /* Take full width */
+
+    }
+}
+
+/* Tablet view (max-width: 768px) */
+@media (max-width: 768px) {
+    .Footer .container {
+        flex-direction: row; /* Keep in row layout for tablets */
+        flex-wrap: wrap; /* Allow items to wrap */
+        gap: 30px; /* Spacing between columns */
+        padding: 20px; /* Padding for content */
+        justify-content: flex-start; /* Align to left */
+    }
+
+    .column {
+        width: 45%; /* Ensure each column takes half the width */
+        text-align: left; /* Align text in the columns to the left */
+    }
+
+    .socials {
+        justify-content: flex-start; /* Align social icons to the left */
+        gap: 15px;
+    }
+
+    .column h4,
+    .column h3,
+    .column p {
+        width: 100%; /* Ensure text and content take full width */
+    }
+}

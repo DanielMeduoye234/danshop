@@ -1,0 +1,65 @@
+:root {
+    --background-color: #ffffff;
+    --Primary-color: #000000;
+    --tertiary-color: #F2F0F1;
+  }
+  
+  /* ======= LOGO ICONS SECTION ======= */
+  .Logo-icons {
+    background: black;
+  }
+  
+  .Logo-icons .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px; /* Better height for desktop */
+    width: 100%;
+    padding: 15px;
+  }
+  
+  /* Ensuring Images Look Clear & Well-Spaced */
+  .img-contain {
+    width: 100%;
+    max-width: 200px; /* Large enough for desktop clarity */
+    height: auto;
+    object-fit: contain; /* Prevents distortion */
+  }
+  
+  /* ======= RESPONSIVE STYLES ======= */
+  
+  /* Tablet View */
+  @media screen and (max-width: 1024px) {
+    .Logo-icons .container {
+      height: 100px;
+      flex-direction: row;
+    }
+  
+    .img-contain {
+      max-width: 160px; /* Slightly smaller for tablets */
+    }
+  }
+  
+  /* Mobile View */
+  @media screen and (max-width: 768px) {
+    .Logo-icons .container {
+      height: 90px;
+      flex-direction: row;
+    }
+  
+    .img-contain {
+      max-width: 120px; /* Adjust for mobile clarity */
+    }
+  }
+  
+  /* Small Mobile (extra responsiveness) */
+  @media screen and (max-width: 480px) {
+    .Logo-icons .container {
+      height: 80px;
+    }
+  
+    .img-contain {
+      max-width: 100px; /* Smaller images for compact screens */
+    }
+  }
+  

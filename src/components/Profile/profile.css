@@ -1,0 +1,152 @@
+/* Profile.module.css */
+
+/* Container for the profile */
+.profileContainer {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Profile heading */
+  .profileContainer h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Profile details */
+  .profileDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  /* Welcome message */
+  .profileDetails h3 {
+    font-size: 1.6rem;
+    color: #444;
+    font-weight: 600;
+  }
+  
+  /* Email */
+  .profileDetails p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+  }
+  
+  /* Profile image */
+  .profileImage {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .profileImage:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Login notification */
+  .loginNotification {
+    
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Login notification text */
+  .loginNotification p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Button styles */
+  .authBtn,
+  .logoutBtn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #ffffff;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .authBtn:hover,
+  .logoutBtn:hover {
+    background: linear-gradient(135deg, #0056b3, #003d80);
+    transform: translateY(-2px);
+  }
+  
+  .authBtn:active,
+  .logoutBtn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Supabase data container */
+  .supabaseData {
+    margin-top: 1.5rem;
+    text-align: left;
+  }
+  
+  .supabaseData h4 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+  }
+  
+  .supabaseData ul {
+    padding-left: 1.2rem;
+    color: #444;
+  }
+  
+  .supabaseData li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+  
+  /* Ensure responsive design */
+  @media (max-width: 768px) {
+    .profileContainer {
+      padding: 1.5rem;
+    }
+  
+    .profileDetails {
+      gap: 1rem;
+    }
+  
+    .profileImage {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .authBtn,
+    .logoutBtn {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+  

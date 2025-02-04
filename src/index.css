@@ -1,0 +1,187 @@
+:root {
+ --background-color: #ffffff;
+ --Primary-color: 000000;
+ --tertiary-color: #F2F0F1;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: poppins, Roboto;
+  font-size: 16px;
+  line-height: 1.5;
+  background: white;
+}
+
+h2{
+  font-family: Bebas Neue;
+  font-size: 50px;
+  margin: 0pc;
+}
+
+
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+img{
+  max-width: 100%;
+  margin: 0;
+}
+
+
+ul li {
+  list-style: none;
+  color: black
+}
+
+i{
+  font-size: 50px;
+}
+
+
+/*SHOP CODES*/
+.Shop{
+  margin: 50px 0px;
+}
+
+.Shop .container{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 50px;
+}
+
+.Shop .container .left{
+  border: 1px double rgba(0, 0, 0, 0.313);
+  height: 100%;
+  padding: 20px 60px;
+  border-radius: 10px;
+  position: sticky;
+  top: 50px;
+}
+
+.fliter-heading{
+  display: flex;
+  flex-direction: column;
+}
+
+.inputItems{
+  margin-bottom: 10px;
+}
+
+.inputItemsz{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+label{
+  margin-left: 20px;
+}
+
+
+.heading{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+
+.fliter-btn{
+  padding: 15px 40px;
+  border: none;
+  color: white;
+  background: black;
+  border-radius: 25px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+/*UTITLITY CLASSES*/
+
+.container{
+  max-width: 1250px;
+  margin: 0px auto;
+  padding: 0px 0px;
+}
+
+
+/*for authentication with Kinde*/
+
+.Auth{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  flex-direction: column;
+}
+
+button{
+  margin: 20px;
+}
+
+.authBtn {
+  padding: 15px 30px;
+  font-size: 15px;
+  border-radius: 40px;
+  margin: 0px 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}.authBtn:hover{
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
+
+
+.logoutBtn{
+  padding: 15px 30px;
+  font-size: 15px;
+  border-radius: 40px;
+  border: none;
+  background-color: black;
+  color: white;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.profileContainer {
+  padding: 20px;
+  text-align: center;
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profileDetails {
+  margin-top: 20px;
+}
+
+.profileImage {
+  margin-top: 10px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+
