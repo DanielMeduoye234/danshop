@@ -50,7 +50,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="close-menu" onClick={closeMobileMenu}>
-            <FaRegTimesCircle size={'20px'} className='close' />
+            <FaRegTimesCircle size={'30px'} className='close' />
           </div>
           <ul>
             <div className="logo">

@@ -1,20 +1,28 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../../CartContext';
-import { useKindeAuth } from '@kinde-oss/kinde-auth-react';
+import { supabase } from '../../supabaseClient';
 import { useNavigate } from 'react-router-dom';
 import './cart.css';
 
 const Cart = () => {
-  const { user } = useKindeAuth(); // Check if the user is authenticated
+  const [user, setUser] = useState(null); // Track authenticated user
   const { cartItems, setCartItems } = useContext(CartContext);
   const navigate = useNavigate();
 
-  // Redirect non-logged-in users to /login
+  // Check for authenticated user on component mount
   useEffect(() => {
-    if (!user) {
-      navigate('/login');
-    }
-  }, [user, navigate]);
+    window.scrollTo(0, 0);
+    const fetchUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      setUser(user);
+      
+      // Redirect if user is not logged in
+      if (!user) {
+        navigate('/login');
+      }
+    };
+    fetchUser();
+  }, [navigate]);
 
   // Load cart items from localStorage on component mount
   useEffect(() => {

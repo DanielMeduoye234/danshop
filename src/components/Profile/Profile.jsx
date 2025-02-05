@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import { useKindeAuth } from '@kinde-oss/kinde-auth-react';
+import { supabase } from '../../supabaseClient';
 import './profile.css';
 
 const Profile = () => {
-  const { user, logout, login } = useKindeAuth();
-  const [profilePicture, setProfilePicture] = useState(() =>
-    localStorage.getItem('profilePicture')
-  );
+  const [user, setUser] = useState(null);
+  const [profilePicture, setProfilePicture] = useState(localStorage.getItem('profilePicture'));
   const [uploading, setUploading] = useState(false);
 
-  // Handle file upload
+  useEffect(() => {
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      setUser(user);
+    };
+
+    getUser();
+  }, []);
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setUser(null);
+  };
+
   const handleFileUpload = async (event) => {
     const file = event.target.files[0];
     if (!file) return;
@@ -32,14 +43,13 @@ const Profile = () => {
     }
   };
 
-  // If the user is not authenticated, show a login prompt
   if (!user) {
     return (
       <div className="loginNotification">
         <p>Please log in to view your profile.</p>
-        <button className="authBtn" onClick={login} type="button">
-          Log In
-        </button>
+        <a href="/auth">
+          <button className="authBtn" type="button">Log In</button>
+        </a>
       </div>
     );
   }
@@ -48,10 +58,8 @@ const Profile = () => {
     <div className="profileContainer">
       <h2>MY Profile</h2>
       <div className="profileDetails">
-        <h3>Welcome, {user.name}</h3>
-        <p>Email: {user.email}</p>
-
-        {/* Profile Picture */}
+        <h3>Welcome, {user.email}</h3>
+        
         <div className="profileImageContainer">
           {profilePicture ? (
             <img src={profilePicture} alt="Profile" className="profileImage" />
@@ -60,7 +68,6 @@ const Profile = () => {
           )}
         </div>
 
-        {/* Upload Profile Picture */}
         <div className="uploadContainer">
           <label htmlFor="fileUpload" className="uploadLabel">
             {uploading ? 'Uploading...' : 'Change Profile Picture'}
@@ -75,11 +82,7 @@ const Profile = () => {
           />
         </div>
 
-        <div>
-          <button className="logoutBtn" onClick={logout}>
-            Log Out
-          </button>
-        </div>
+        <button className="logoutBtn" onClick={handleLogout}>Log Out</button>
       </div>
     </div>
   );
